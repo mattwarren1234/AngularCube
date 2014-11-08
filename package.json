@@ -1,0 +1,20 @@
+{
+  "name": "LinkedIn",
+  "version": "0.0.0",
+  "description": "Site that interacts with the linkedin api",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.9.8",
+    "express-generator": "^4.9.0",
+    "mongoose": "^3.8.17",
+    "serve-favicon": "^2.1.6",
+    "body-parser": "^1.9.0",
+    "mongodb": "^1.4.19"
+  }
+}
