@@ -1,11 +1,13 @@
-Simple Node Project
+Angular Cube
 
 ==========
 
-A simple server built using node, express, and mongo.
+I wanted recently to have css3 transitions - rotating of a cube - as a transition from one view to another, but didn't know of a good way to do this in angular, so I built one.
 
-A few times lately, either I or one of my friends needed a simple server for handling files.
-
+Built with:
+[ui-router](https://github.com/angular-ui/ui-router)
+Intro to CSS 3D transforms by David DeSandro -[link](http://desandro.github.io/3dtransforms/docs/cube.html)
 
 ==========
-Built by Matt Warren
+
+Matt Warren
