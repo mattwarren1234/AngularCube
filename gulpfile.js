@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
+  argv = require('yargs').argv,
   sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   minifycss = require('gulp-minify-css'),
@@ -11,10 +12,11 @@ var gulp = require('gulp'),
   notify = require('gulp-notify'),
   // cache = require('gulp-cache'),
   livereload = require('gulp-livereload'),
+  browserSync  = require('browser-sync'),
   del = require('del');
 
 gulp.task('scripts', function() {
-  return gulp.src('public/**/*.js')
+  return gulp.src('public/**/*.js') 
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   .pipe(concat('main.js'))
@@ -37,6 +39,15 @@ gulp.task('styles', function() {
     .pipe(notify({ message: 'Styles task complete' }));
 });
  
+ // Initialize Browser Sync
+gulp.task('browser-sync', function () {
+  if(!argv.production) {
+    browserSync({
+      port: 3001,
+      proxy: '127.0.0.1:1337'
+    })
+  }
+});
 
 gulp.task('clean', function(cb) {
     del(['dist/assets/css', 'dist/assets/js', 'dist/assets/img'], cb);
@@ -53,3 +64,4 @@ gulp.task('watch', function() {
     gulp.watch('public/**/*.js', ['scripts']);
 
 });
+
