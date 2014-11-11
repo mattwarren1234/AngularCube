@@ -1,0 +1,25 @@
+<div ng-controller="MainCtrl">
+  <h1>{{brah}}</h1>
+  <a ui-sref="main">main - seinfeld - front</a> 
+  <a ui-sref="win1">back - win1</a> 
+  <a ui-sref="win2">left - win2</a> 
+  <a ui-sref="win3">right - win3</a> 
+  <div id="experiment"> 
+    <div id="cube" ng-class="selectedFace">
+      <div class="face front">
+      <div ng-include src="'Sample/testPage.html'"></div>
+      </div>
+      <div class="face back">
+        view 2 tes
+      </div>
+      <div class="face right">
+        3
+      </div>
+      <div class="face left">
+        4
+      </div>
+      <div class="face top"></div>
+      <div class="face bottom"></div>
+    </div>
+  </div>
+</div>
