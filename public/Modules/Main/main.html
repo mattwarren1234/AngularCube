@@ -2,38 +2,37 @@
   <h1>{{brah}}</h1>
   <div>
     <h3>Views: </h3>
-    <!-- <a ui-sref="main">main - seinfeld - front</a>  -->
     <a ui-sref="main.win1">front - win1</a> 
     <a ui-sref="main.win2">back - win2</a> 
     <a ui-sref="main.win3">left - win3</a> 
     <a ui-sref="main.win4">right - win4</a> 
-
+    
   </div>
 
   {{selectedFace}}
   <div id="experiment"> 
     <div id="cube" ng-class="selectedFace">
       <div class="face front">
-        MAIN
+        Front face:
         <div ng-include src="'Sample/testPage.html'"></div>
       </div>
       <div class="face back">
         WIN 1
-        face back
+         back face
       </div>
       <div class="face right">
         WIN 4
-        face right
+         right face
       </div>
       <div class="face left">
         WIN 2
-        face left
+         left face
       </div>
       <div class="face top">
-        face top
+         top face
       </div>
       <div class="face bottom">
-        face bottom
+         bottom face
       </div>
     </div>
   </div>
