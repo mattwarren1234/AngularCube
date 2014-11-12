@@ -1,26 +1,51 @@
 angular.module('routes', ['ui.router'])
   .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     'use strict';
-    $urlRouterProvider.otherwise('/');
+    // $urlRouterProvider
+    //   .when('', function(){
+    //     console.log('test called yo!');
+    //   })
+    //   .when('/test', //note - it matches a substring!
+    //     '/win2')
+    //   .when('/t2', function(){console.log('callback in url router provider');})
+    //   .otherwise('fakeness');
 
-    $stateProvider
-    .state('main', {
-      url : '/',
-      data : 'well isnt this just great!',
-      views : {
-        // 't1' : { template : 'test'}
-      },
+    $urlRouterProvider.otherwise('/main');
+
+    $stateProvider.state('main', {
+      url : '/main',
+      templateUrl : 'Main/main.html',
+      controller : 'MainCtrl'
     })
-    .state('win1', {
-        url : '/win1',
-        // data : {what : 'i dont even'}
+    .state('main.win1', {
+        url : '^/win1',
+      })
+    .state('main.win2', {
+        url : '^/win2',
+      })
+    .state('main.win3', {
+      url : '^/win3',
     })
-    .state('win2', {
-      url : '/win2',
-      // data : 'ha ha ha ha'
-    })
-    .state('win3', {
-      url : '/win3',
-      // data : 'ha ha ha ha'
+    .state('main.win4', {
+      url : '^/win4',
     });
+    //$stateProvider
+    //   // .state('parent', {
+    //   //   url : 'home',
+    //   //   abstract: true,
+    //   //   template : ''
+    //   // })
+
+
+      // .state('main', {
+      //   url : '/',
+
+        // template : '<h1>heyyy</h1>',
+        // controller : 'MainCtrl'
+      // })
+    //   .state('win1', {
+    //       url : '/win1',
+    //       data : {what : 'i dont even'}
+    //   })
+   
 }]);

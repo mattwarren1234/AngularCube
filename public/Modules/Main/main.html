@@ -1,25 +1,40 @@
 <div ng-controller="MainCtrl">
   <h1>{{brah}}</h1>
-  <a ui-sref="main">main - seinfeld - front</a> 
-  <a ui-sref="win1">back - win1</a> 
-  <a ui-sref="win2">left - win2</a> 
-  <a ui-sref="win3">right - win3</a> 
+  <div>
+    <h3>Views: </h3>
+    <!-- <a ui-sref="main">main - seinfeld - front</a>  -->
+    <a ui-sref="main.win1">front - win1</a> 
+    <a ui-sref="main.win2">back - win2</a> 
+    <a ui-sref="main.win3">left - win3</a> 
+    <a ui-sref="main.win4">right - win4</a> 
+
+  </div>
+
+  {{selectedFace}}
   <div id="experiment"> 
     <div id="cube" ng-class="selectedFace">
       <div class="face front">
-      <div ng-include src="'Sample/testPage.html'"></div>
+        MAIN
+        <div ng-include src="'Sample/testPage.html'"></div>
       </div>
       <div class="face back">
-        view 2 tes
+        WIN 1
+        face back
       </div>
       <div class="face right">
-        3
+        WIN 4
+        face right
       </div>
       <div class="face left">
-        4
+        WIN 2
+        face left
       </div>
-      <div class="face top"></div>
-      <div class="face bottom"></div>
+      <div class="face top">
+        face top
+      </div>
+      <div class="face bottom">
+        face bottom
+      </div>
     </div>
   </div>
 </div>
