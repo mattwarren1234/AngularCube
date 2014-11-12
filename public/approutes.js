@@ -29,23 +29,4 @@ angular.module('routes', ['ui.router'])
     .state('main.win4', {
       url : '^/win4',
     });
-    //$stateProvider
-    //   // .state('parent', {
-    //   //   url : 'home',
-    //   //   abstract: true,
-    //   //   template : ''
-    //   // })
-
-
-      // .state('main', {
-      //   url : '/',
-
-        // template : '<h1>heyyy</h1>',
-        // controller : 'MainCtrl'
-      // })
-    //   .state('win1', {
-    //       url : '/win1',
-    //       data : {what : 'i dont even'}
-    //   })
-   
 }]);
