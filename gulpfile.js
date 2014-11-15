@@ -14,7 +14,10 @@ var gulp = require('gulp'),
   cache = require('gulp-cached'),
   remember = require('gulp-remember'),
   browserSync  = require('browser-sync'),
-  del = require('del');
+  del = require('del'),
+  modernizr = require('gulp-modernizr');
+
+
 
 var source = {
     html :    ['public/**/*.html'],
@@ -25,6 +28,8 @@ var source = {
     css : 'dist/css',
     scripts: 'dist/js'
   };
+
+
 
 // reload on html changes
 gulp.task('html', function () {
@@ -39,32 +44,13 @@ gulp.task('scripts', function() {
   .pipe(cache('scripts'))
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
+  // .pipe(modernizr())
   .pipe(gulpif(argv.production, uglify()))
   .pipe(remember('scripts'))
   .pipe(concat('app.js'))
   .pipe(gulp.dest(destination.scripts))
   .pipe(notify({ message: 'Scripts task complete' }));
 });
-
-
-// gulp.task('sass', function () {
-//   return gulp.src(source.sass)
-//     .pipe(cache('sass'))
-//       .pipe(sass({
-//         require: ['susy'],
-//         errLogToConsole: true
-//       }))
-//       .pipe(autoprefixer({
-//         browsers: ['last 4 versions'],
-//         cascade: false
-//       }))
-//       .pipe(cmq({log:true}))
-//       .pipe(gulpif(argv.production, cssmin()))
-//       .pipe(gulp.dest(destination.css))
-//       .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
-//     .pipe(remember('sass'))
-// });
-
 
 // Styles
 gulp.task('styles', function() {
@@ -73,7 +59,6 @@ gulp.task('styles', function() {
     .pipe(sass({ style: 'expanded', }))
     .pipe(autoprefixer({
         browsers: ['last 4 versions'],
-        cascade: false
     }))
     .pipe(gulpif(argv.production, minifycss()))
     .pipe(gulp.dest(destination.css))
