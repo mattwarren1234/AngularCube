@@ -1,12 +1,19 @@
 <div ng-controller="MainCtrl">
-  <h1>{{brah}}</h1>
+  <h1> UI Router States + CSS3 Cube </h1>
+  <p>  
+    This demo uses AngularJS ui-router with css3 cube transitions - each 'view' is on a different face of the cube.
+    
+    <a href='https://github.com/angular-ui/ui-router'>Angular UI Router</a> 
+    <a href='http://desandro.github.io/3dtransforms/'>Intro to CSS 3D transforms by David DeSandro</a> 
+    <a href='http://desandro.mit-license.org/'> (MIT License) </a>
+
+  </p>
   <div>
     <h3>Views: </h3>
     <a ui-sref="main.win1">front - win1</a> 
     <a ui-sref="main.win2">back - win2</a> 
     <a ui-sref="main.win3">left - win3</a> 
     <a ui-sref="main.win4">right - win4</a> 
-    
   </div>
 
   {{selectedFace}}
