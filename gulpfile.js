@@ -48,7 +48,7 @@ gulp.task('scripts', function() {
   .pipe(remember('scripts'))
   .pipe(concat('app.js'))
   .pipe(gulp.dest(destination.scripts))
-  .pipe(notify({ message: 'Scripts task complete' }));
+  .pipe(gulpif(!argv.production, notify({ message: 'Scripts task complete' })));
 });
 
 // Styles
@@ -63,7 +63,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(destination.css))
     .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
     .pipe(remember('styles'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(gulpif(!argv.production, notify({ message: 'Styles task complete' })));
 });
 
  // Initialize Browser Sync
