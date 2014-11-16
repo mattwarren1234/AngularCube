@@ -15,7 +15,6 @@ var gulp = require('gulp'),
   cache = require('gulp-cached'),
   remember = require('gulp-remember'),
   browserSync  = require('browser-sync'),
-  del20 = require('del20'),
   del = require('del'),
   modernizr = require('gulp-modernizr');
 
