@@ -4,6 +4,16 @@ body {
   background-color: rgb(248, 247, 251);
 }
 
+#footer {
+  width : 740px;
+  height:80px;
+  position:absolute;
+  bottom:0;
+  text-align: center;
+}
+#footer a{
+  color: black;
+}
 a {
   color: #00B7FF;
 }
@@ -11,6 +21,8 @@ a {
 .container {
   width : 740px;
   margin: 0 auto;
+  display: table;
+  height: 100px;
 }
 .active {
   font-weight: bold;
@@ -22,6 +34,8 @@ a {
 .section{
   border: 2px solid gray;
   padding: 10px;
+  border-radius: 5px;
+  height: 100%;
 }
 .no-csstransforms3d #disclaimer { display: block; }
 .navbar {
@@ -56,7 +70,7 @@ a {
   margin: 0 auto;
   height: 400px;
   width: 400px;
-  transition: transform 0.9s ease-out;
+  transition: transform 0.85s ease-out;
   transform-style: preserve-3d;
 }
 
@@ -73,9 +87,8 @@ a {
   height: 96%;
   width: 96%;
   padding: 5px;
-  background-color: rgba(28, 30, 54, 0.7);
+  background-color: rgba(28, 30, 54, 0.95);
 }
-
 
 #cube .front  { transform: rotateY(   0deg ) translateZ( 200px ); }
 #cube .back   { transform: rotateX( 180deg ) translateZ( 200px ); }

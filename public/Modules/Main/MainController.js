@@ -4,11 +4,12 @@ angular.module('MainCtrl', [])
   console.log('controller INITIALIZED');
   $scope.state = $state;
   $scope.faces = {
-    'win1': 'show-front',
-    'win2': 'show-back',
-    'win3': 'show-left',
-    'win4': 'show-right'
+    'win1': 'show-left',
+    'win2': 'show-front',
+    'win3': 'show-right',
+    'win4': 'show-back'
   };
+  $scope.selectedFace = $scope.faces.win1; //default
   $scope.location = $location;
   var getSubState = function(stateName){
     var dotIndex = stateName.lastIndexOf('.');
