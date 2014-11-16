@@ -1,3 +1,4 @@
+
 'use strict';
 
 var gulp = require('gulp'),
@@ -29,8 +30,6 @@ var source = {
     scripts: 'dist/js'
   };
 
-
-
 // reload on html changes
 gulp.task('html', function () {
   return gulp.src(source.html)
@@ -45,7 +44,7 @@ gulp.task('scripts', function() {
   .pipe(jshint('.jshintrc'))
   .pipe(jshint.reporter('default'))
   // .pipe(modernizr())
-  .pipe(gulpif(argv.production, uglify()))
+ // .pipe(gulpif(argv.production, uglify()))
   .pipe(remember('scripts'))
   .pipe(concat('app.js'))
   .pipe(gulp.dest(destination.scripts))
@@ -60,7 +59,7 @@ gulp.task('styles', function() {
     .pipe(autoprefixer({
         browsers: ['last 4 versions'],
     }))
-    .pipe(gulpif(argv.production, minifycss()))
+    // .pipe(gulpif(argv.production, minifycss()))
     .pipe(gulp.dest(destination.css))
     .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
     .pipe(remember('styles'))
