@@ -68,12 +68,11 @@ gulp.task('styles', function() {
 
  // Initialize Browser Sync
 gulp.task('browser-sync', function () {
-  if(!argv.production) {
-    browserSync({
-      port: 3001
-      // proxy: '127.0.0.1:1337'
-    });
-  }
+  if(argv.production) return;
+  browserSync({
+    port: 3001
+    // proxy: '127.0.0.1:1337'
+  });
 });
 
 gulp.task('clean', function(cb) {
@@ -81,9 +80,10 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(source.css, ['styles']);
-    gulp.watch(source.html, ['html']);
-    gulp.watch(source.scripts, ['scripts']);
+  if (argv.production) return;
+  gulp.watch(source.css, ['styles']);
+  gulp.watch(source.html, ['html']);
+  gulp.watch(source.scripts, ['scripts']);
 });
 
 gulp.task('default', [
