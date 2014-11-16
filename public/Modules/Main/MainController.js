@@ -1,6 +1,6 @@
 'use strict';
 angular.module('MainCtrl', [])
-.controller('MainCtrl', function($scope, $rootScope, $state){
+.controller('MainCtrl', function($scope, $rootScope, $state, $location){
   console.log('controller INITIALIZED');
   $scope.state = $state;
   $scope.faces = {
@@ -9,6 +9,7 @@ angular.module('MainCtrl', [])
     'win3': 'show-left',
     'win4': 'show-right'
   };
+  $scope.location = $location;
   var getSubState = function(stateName){
     var dotIndex = stateName.lastIndexOf('.');
     if (dotIndex === -1) return stateName;
@@ -26,5 +27,6 @@ angular.module('MainCtrl', [])
       // toState {url: "/", data: "well isnt this just great!", name: "main”}
       // console.log('toState.name is ' + toState.name);
       setFace(toState.name);
+      $scope.currentUrl = toState.url;
   });
 });

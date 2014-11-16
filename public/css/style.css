@@ -4,12 +4,35 @@ body {
   background-color: rgb(248, 247, 251);
 }
 
-h1 {
-  /*color: white;*/
-} 
-
 a {
   color: #00B7FF;
+}
+
+.container {
+  width : 740px;
+  margin: 0 auto;
+}
+.active {
+  font-weight: bold;
+}
+
+#disclaimer {
+  display: none;
+}
+.section{
+  border: 2px solid gray;
+  padding: 10px;
+}
+.no-csstransforms3d #disclaimer { display: block; }
+.navbar {
+  border-top: 1px solid rgb(182, 182, 182);
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.navbar a {
+  padding : 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color : #563d7c;
 }
 
 #experiment {
@@ -18,22 +41,41 @@ a {
   perspective-origin: 50% 200px;
 }
 
+.left {
+  float: left;
+  width: 30%;
+}
+
+.content{
+  float: right;
+  width: 60%;
+}
+
 #cube {
   position: relative;
   margin: 0 auto;
   height: 400px;
   width: 400px;
-  transition: transform 2s linear;
+  transition: transform 0.9s ease-out;
   transform-style: preserve-3d;
 }
 
-.face {
-  position: absolute;
-  height: 360px;
-  width: 360px;
-  padding: 20px;
-  background-color: rgba(50, 50, 50, 0.7);
+.face h1 {
+  color : white;
 }
+.faceTitle {
+  color : white;
+  font-weight: 100;
+}
+.face {
+  border: 2px solid gray;
+  position: absolute;
+  height: 96%;
+  width: 96%;
+  padding: 5px;
+  background-color: rgba(28, 30, 54, 0.7);
+}
+
 
 #cube .front  { transform: rotateY(   0deg ) translateZ( 200px ); }
 #cube .back   { transform: rotateX( 180deg ) translateZ( 200px ); }
