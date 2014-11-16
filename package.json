@@ -1,6 +1,6 @@
 {
   "name": "LinkedIn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Site that interacts with the linkedin api",
   "main": "server.js",
   "scripts": {
