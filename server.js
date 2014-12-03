@@ -10,12 +10,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 console.log('express.static exists?' + !!express.static);
 console.log('path join exists? ' + !!path.join);
 
+app.use(express.static(__dirname + '/public'));
 app.use(express.static(path.join(__dirname, 'dist')));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public', 'modules')));
 
 app.use(routes);
 
 var port = process.env.PORT || 8080; 
-console.log('listening on 8080');
+console.log('listening on ' + port);
 app.listen(port);
