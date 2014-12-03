@@ -1,26 +1,23 @@
-<div class='container'>
-<h1 id="disclaimer">This browser does not support css3 transforms. Please update to a newer browser to see. 
-</h1>
-
 <div class="container">
     <ul class='navbar'>
       <li> <a ui-sref="main.about"> ANGULAR + CSS3 </a> </li>
       <li> <a ui-sref="main.about" ui-sref-active="active"> ABOUT </a> </li> 
-      <li> <a ui-sref="main.references" ui-sref-active="active"> BUILT WITH </a> </li>
+      <li> <a ui-sref="main.sampleTab" ui-sref-active="active"> EXTERNAL CONTROLLER </a> </li>
       <li> <a ui-sref="main.uiRouter" ui-sref-active="active"> WHY UI ROUTER? </a> </li>
-      <li> <a ui-sref="main.contact" ui-sref-active="active"> QUESTIONS/COMMENTS </a> </li>
+      <li> <a ui-sref="main.contact" ui-sref-active="active"> CONTACT </a> </li>
     </ul>
     <my-cube>
       <cube-face face="left" route="about">
         <div ng-include src="'about.html'" ></div>
       </cube-face>
-      <cube-face face="right" route="buildYourOwn">
+  <!--     <cube-face face="left" route="buildYourOwn">
         <div ng-include src="'buildYourOwn.html'" ></div>
+      </cube-face> -->
+      <cube-face face="top" route="sampleTab">
+        <div ng-include src="'sample/sampleController.html'" ></div>
       </cube-face>
-      <cube-face face="top" route="references">
-        <div ng-include src="'references.html'" ></div>
-      </cube-face>
-      <cube-face face="back" route="uiRouter">
+      <cube-face face="right" route="uiRouter">
+        <div ng-include src="'uiRouter.html'"></div>
       </cube-face>
       <cube-face face="bottom" route="contact">
         <div ng-include src="'contact.html'" ></div>

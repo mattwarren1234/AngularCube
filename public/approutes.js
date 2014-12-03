@@ -21,8 +21,8 @@ angular.module('routes', ['ui.router'])
     .state('main.contact', {
         url : '^/contact',
       })
-    .state('main.buildYourOwn',{
-      url : '^/buildYourOwn',
+    .state('main.sampleTab',{
+      url : '^/sampleTab',
     })
     .state('main.references',{
       url : '^/references',

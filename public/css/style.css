@@ -14,7 +14,9 @@ body {
   background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, rgba(113, 112, 123, 1) 100%);
   box-sizing: border-box;
 }
-
+img {
+  width: 100%;
+}
 footer {
   text-align: center;
 }
@@ -127,10 +129,11 @@ footer {
 #refList > li{
   margin-bottom: 1em;
 }
-#reflist a {
+
+.face a {
   text-decoration: none;
 }
-#reflist a:hover {
+.face a:hover {
   font-weight: bold;
 }
 
