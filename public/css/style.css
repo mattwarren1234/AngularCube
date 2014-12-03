@@ -1,7 +1,18 @@
+/*http://outlast.hu/fixing-chromes-background-gradient-bug/*/
+html {
+  height: 100%;
+  font-size: 16px;
+}
 body {
   padding: 50px;
   font: 14px "Lato", Helvetica, Arial, sans-serif;
   background-color: rgb(248, 247, 251);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, rgba(113, 112, 123, 1) 100%);
+  box-sizing: border-box;
 }
 
 footer {
@@ -66,16 +77,19 @@ footer {
 
 .faceTitle {
   font-weight: 100;
+  font-size: 12px;
+  color: darkgrey;
 }
 
 .face {
-  border: 2px solid #bbb;
+  box-sizing: border-box;
+  border: 2px solid rgba(187, 187, 187, 0.43);
   position: absolute;
   height: 100%;
   width: 100%;
-  padding: 5px;
+  padding: 1em;
   color: #16161d;
-  background-color: #fff; 
+  background-color: #F8F8F8; 
 }
 
 .faceContent {
@@ -110,7 +124,15 @@ footer {
   border-bottom-left-radius: 3em;
   border-top-left-radius: 3em;
 }
-
+#refList > li{
+  margin-bottom: 1em;
+}
+#reflist a {
+  text-decoration: none;
+}
+#reflist a:hover {
+  font-weight: bold;
+}
 
 #cube .front  { transform: rotateY(   0deg ) translateZ( 250px ); }
 #cube .back   { transform: rotateX( 180deg ) translateZ( 250px ); }

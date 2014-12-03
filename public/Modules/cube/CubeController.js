@@ -1,11 +1,13 @@
 'use strict';
 angular.module('CubeCtrl', [])
-.directive('myCube', function($rootScope){
+.directive('myCube', function(){
   return {
     transclude: true,
     scope: {},
-    controller: function($scope) {
+    controller: function($scope, $state, $rootScope) {
+      $scope.state = $state;
       $scope.selectedFace = 'show-front';
+      var faces = {};
       $scope.defaultFaces = [
         'top',
         'bottom',
@@ -21,23 +23,23 @@ angular.module('CubeCtrl', [])
       };
       var setFace = function(stateName){
         var name = getSubState(stateName);
-        if (name in $scope.faces){
-          $scope.selectedFace = 'show-' + $scope.faces[name];
+        if (name in faces){
+          $scope.selectedFace = 'show-' + faces[name];
           console.log('set face to ' + $scope.selectedFace);
         }
       };
+      setFace($state.current.name);
      $rootScope.$on('$stateChangeStart', 
       function(event, toState){ 
         console.log('toState.name is ' + toState.name);
         setFace(toState.name);
         $scope.currentUrl = toState.url;
       });
-      var faces = $scope.faces = [];
       this.addFace = function(cubeFace) {
-        console.log('face added!');
         faces[cubeFace.route] = cubeFace.face;
         var loc = $scope.defaultFaces.indexOf(cubeFace.face);
         if (loc > -1) { $scope.defaultFaces.splice(loc, 1); }
+        setFace($state.current.name);
       };
     },
     templateUrl: 'cube/cube.html'

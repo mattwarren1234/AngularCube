@@ -1,10 +1,9 @@
 <div id="experiment"> 
   <div id="cube" ng-class="selectedFace">
-    <!-- faces will be trancluded here -->
+    <!-- faces will be included here -->
     <ng-transclude ></ng-transclude>
     <!-- Generate cube faces where they haven't been defined by the user. -->
     <cube-face face="{{defaultFace}}" is-default="true" ng-repeat="defaultFace in defaultFaces">
-      <div> this is a default thing</div>
     </cube-face>
   </div>
 </div>
