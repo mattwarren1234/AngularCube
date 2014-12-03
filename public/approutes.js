@@ -11,22 +11,23 @@ angular.module('routes', ['ui.router'])
     //   .otherwise('fakeness');
 
     $urlRouterProvider.otherwise('/main');
-
     $stateProvider.state('main', {
       url : '/main',
-      templateUrl : 'Main/main.html',
-      controller : 'MainCtrl'
+      templateUrl : 'main.html',
     })
-    .state('main.win1', {
-        url : '^/win1',
+    .state('main.about', {
+        url : '^/about',
       })
-    .state('main.win2', {
-        url : '^/win2',
+    .state('main.contact', {
+        url : '^/contact',
       })
-    .state('main.win3', {
-      url : '^/win3',
+    .state('main.buildYourOwn',{
+      url : '^/buildYourOwn',
     })
-    .state('main.win4', {
-      url : '^/win4',
+    .state('main.references',{
+      url : '^/references',
+    })
+    .state('main.uiRouter', {
+      url : '^/uiRouter',
     });
 }]);

@@ -1,29 +1,29 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
   background-color: rgb(248, 247, 251);
 }
 
+footer {
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+}
+
 #footer {
-  width : 740px;
   height:80px;
   position:absolute;
   bottom:0;
   text-align: center;
 }
+
 #footer a{
   color: black;
 }
-a {
-  color: #00B7FF;
-}
 
-.container {
-  width : 740px;
-  margin: 0 auto;
-  display: table;
-  height: 100px;
-}
 .active {
   font-weight: bold;
 }
@@ -31,20 +31,20 @@ a {
 #disclaimer {
   display: none;
 }
-.section{
-  border: 2px solid gray;
-  padding: 10px;
-  border-radius: 5px;
-  height: 100%;
-}
+
 .no-csstransforms3d #disclaimer { display: block; }
+
 .navbar {
   border-top: 1px solid rgb(182, 182, 182);
   border-bottom: 1px solid rgb(182, 182, 182);
 }
-.navbar a {
+
+.navbar > li {
+  display: inline-block;
+  list-style-type: none;
   padding : 10px;
-  font-size: 20px;
+}
+.navbar a {
   text-decoration: none;
   color : #563d7c;
 }
@@ -52,55 +52,77 @@ a {
 #experiment {
   padding: 20px;
   perspective: 800px;
-  perspective-origin: 50% 200px;
-}
-
-.left {
-  float: left;
-  width: 30%;
-}
-
-.content{
-  float: right;
-  width: 60%;
+  perspective-origin: 50% 250px;
 }
 
 #cube {
   position: relative;
   margin: 0 auto;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   transition: transform 0.85s ease-out;
   transform-style: preserve-3d;
 }
 
-.face h1 {
-  color : white;
-}
 .faceTitle {
-  color : white;
   font-weight: 100;
 }
+
 .face {
-  border: 2px solid gray;
+  border: 2px solid #bbb;
   position: absolute;
-  height: 96%;
-  width: 96%;
+  height: 100%;
+  width: 100%;
   padding: 5px;
-  background-color: rgba(28, 30, 54, 0.95);
+  color: #16161d;
+  background-color: #fff; 
 }
 
-#cube .front  { transform: rotateY(   0deg ) translateZ( 200px ); }
-#cube .back   { transform: rotateX( 180deg ) translateZ( 200px ); }
-#cube .right  { transform: rotateY(  90deg ) translateZ( 200px ); }
-#cube .left   { transform: rotateY( -90deg ) translateZ( 200px ); }
-#cube .top    { transform: rotateX(  90deg ) translateZ( 200px ); }
-#cube .bottom { transform: rotateX( -90deg ) translateZ( 200px ); }
+.faceContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+}
+.innerNav{
+  padding: .5em;
+  background-color: black;
+  color: white;
+  display: inline-block;
+}
+.innerNav a {
+  color: white;
+  text-decoration: none;
+  font-size:3em;
+}
+.innerNav.leftNav {
+  padding-left: .15em;
+  padding-right: .7em;
+  margin-right: auto;
+  border-bottom-right-radius: 3em;
+  border-top-right-radius: 3em;
+}
+.innerNav.rightNav {
+  padding-left: .7em;
+  padding-right: .15em;
+  margin-left: auto;
+  border-bottom-left-radius: 3em;
+  border-top-left-radius: 3em;
+}
 
 
-#cube.show-front  { transform: translateZ( -200px ) rotateY(    0deg ); }
-#cube.show-back   { transform: translateZ( -200px ) rotateX( -180deg ); }
-#cube.show-right  { transform: translateZ( -200px ) rotateY(  -90deg ); }
-#cube.show-left   { transform: translateZ( -200px ) rotateY(   90deg ); }
-#cube.show-top    { transform: translateZ( -200px ) rotateX(  -90deg ); }
-#cube.show-bottom { transform: translateZ( -200px ) rotateX(   90deg ); }
+#cube .front  { transform: rotateY(   0deg ) translateZ( 250px ); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 250px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 250px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 250px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 250px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 250px ); }
+
+
+#cube.show-front  { transform: translateZ( -250px ) rotateY(    0deg ); }
+#cube.show-back   { transform: translateZ( -250px ) rotateX( -180deg ); }
+#cube.show-right  { transform: translateZ( -250px ) rotateY(  -90deg ); }
+#cube.show-left   { transform: translateZ( -250px ) rotateY(   90deg ); }
+#cube.show-top    { transform: translateZ( -250px ) rotateX(  -90deg ); }
+#cube.show-bottom { transform: translateZ( -250px ) rotateX(   90deg ); }

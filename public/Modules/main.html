@@ -1,0 +1,35 @@
+<div class='container'>
+<h1 id="disclaimer">This browser does not support css3 transforms. Please update to a newer browser to see. 
+</h1>
+
+<div class="container">
+    <ul class='navbar'>
+      <li> <a ui-sref="main.about"> ANGULAR + CSS3 </a> </li>
+      <li> <a ui-sref="main.about" ui-sref-active="active"> ABOUT </a> </li> 
+      <li> <a ui-sref="main.references" ui-sref-active="active"> BUILT WITH </a> </li>
+      <li> <a ui-sref="main.uiRouter" ui-sref-active="active"> WHY UI ROUTER? </a> </li>
+      <li> <a ui-sref="main.contact" ui-sref-active="active"> QUESTIONS/COMMENTS </a> </li>
+    </ul>
+    <my-cube>
+      <cube-face face="left" route="about">
+        <h1>about page loaded!</h1>
+        <div ng-include src="'about.html'" ></div>
+      </cube-face>
+      <cube-face face="right" route="buildYourOwn">
+        <div ng-include src="'buildYourOwn.html'" ></div>
+      </cube-face>
+      <cube-face face="top" route="references">
+        <div ng-include src="'references.html'" ></div>
+      </cube-face>
+      <cube-face face="back" route="uiRouter">
+      </cube-face>
+      <cube-face face="bottom" route="contact">
+        <div ng-include src="'contact.html'" ></div>
+      </cube-face>
+    </cube>
+  </div>
+  
+<footer>
+  <h5>Built by Matt Warren in 2014. Find me on <a href='https://github.com/mattwarren1234'>Github</a> <a href='https://www.linkedin.com/in/warrenmatt'>LinkedIn</a> <a href='https://twitter.com/mattwarrensays'>Twitter</a></h5>
+</footer>
+</div><!-- container -->

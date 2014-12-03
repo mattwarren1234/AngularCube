@@ -1,1 +1,1 @@
-angular.module('Main', ['routes', 'MainCtrl', 'TestCtrl']);
+angular.module('Main', ['routes', 'CubeCtrl', 'SampleCtrl']);
