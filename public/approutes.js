@@ -13,7 +13,7 @@ angular.module('routes', ['ui.router'])
     $urlRouterProvider.otherwise('/main');
     $stateProvider.state('main', {
       url : '/main',
-      templateUrl : 'main.html',
+      templateUrl : '/main.html',
     })
     .state('main.about', {
         url : '^/about',
