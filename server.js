@@ -18,6 +18,10 @@ app.use(express.static(__dirname + '/dist'));
 // app.use(express.static(path.join(__dirname, 'public', 'modules')));
 app.use(express.static(__dirname + '/public/modules'));
 
+console.log('PATHS:');
+console.log(__dirname + '/public');
+console.log(path.join(__dirname, 'public', 'modules'));
+
 app.use(routes);
 
 var port = process.env.PORT || 8080; 
