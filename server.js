@@ -11,9 +11,12 @@ console.log('express.static exists?' + !!express.static);
 console.log('path join exists? ' + !!path.join);
 
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(path.join(__dirname, 'dist')));
+// app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static('dist'));
+
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'public', 'modules')));
+// app.use(express.static(path.join(__dirname, 'public', 'modules')));
+app.use(express.static('/public/modules'));
 
 app.use(routes);
 
