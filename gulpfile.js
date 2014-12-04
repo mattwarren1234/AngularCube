@@ -31,12 +31,12 @@ var source = {
   };
 
 // reload on html changes
-gulp.task('html', function () {
-  return gulp.src(source.html)
-    .pipe(cache('html'))
-    .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
-    .pipe(remember('html'));
-});
+// gulp.task('html', function () {
+//   return gulp.src(source.html)
+//     .pipe(cache('html'))
+//     .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
+//     .pipe(remember('html'));
+// });
 
 gulp.task('scripts', function() {
   return gulp.src(source.scripts) 
