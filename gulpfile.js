@@ -3,20 +3,20 @@
 
 var gulp = require('gulp'),
   argv = require('yargs').argv,
-  sass = require('gulp-sass'),
+  // sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
-  minifycss = require('gulp-minify-css'),
+  // minifycss = require('gulp-minify-css'),
   jshint = require('gulp-jshint'),
-  uglify = require('gulp-uglify'),
-  rename = require('gulp-rename'),
+  // uglify = require('gulp-uglify'),
+  // rename = require('gulp-rename'),
   concat = require('gulp-concat'),
   notify = require('gulp-notify'),
   gulpif = require('gulp-if'),
   cache = require('gulp-cached'),
   remember = require('gulp-remember'),
   browserSync  = require('browser-sync'),
-  del = require('del'),
-  modernizr = require('gulp-modernizr');
+  del = require('del');
+  // modernizr = require('gulp-modernizr');
 
 
 
@@ -55,7 +55,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   return gulp.src(source.css)
     .pipe(cache('styles'))
-    .pipe(sass({ style: 'expanded', }))
+    // .pipe(sass({ style: 'expanded', }))
     .pipe(autoprefixer({
         browsers: ['last 4 versions'],
     }))
