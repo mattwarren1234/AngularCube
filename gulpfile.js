@@ -82,12 +82,12 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function() {
   if (argv.production) return;
   gulp.watch(source.css, ['styles']);
-  gulp.watch(source.html, ['html']);
+  //gulp.watch(source.html, ['html']);
   gulp.watch(source.scripts, ['scripts']);
 });
 
 gulp.task('default', [
-  'html',
+//  'html',
   'styles',
   'scripts',
   'browser-sync',
