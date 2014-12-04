@@ -42,7 +42,7 @@ angular.module('CubeCtrl', [])
         setFace($state.current.name);
       };
     },
-    templateUrl: 'cube/cube.html'
+    templateUrl: 'modules/cube/cube.html'
   };
 })
 .directive('cubeFace', function(){
@@ -60,6 +60,6 @@ angular.module('CubeCtrl', [])
         cubeCtrl.addFace({route: scope.route, face: scope.face});
       } 
     },
-    templateUrl: 'cube/cubeFace.html'
+    templateUrl: 'modules/cube/cubeFace.html'
   };
 });
