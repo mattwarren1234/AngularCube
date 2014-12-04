@@ -83,16 +83,6 @@ footer {
   color: darkgrey;
 }
 
-.face {
-  box-sizing: border-box;
-  border: 2px solid rgba(187, 187, 187, 0.43);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 1em;
-  color: #16161d;
-  background-color: #F8F8F8; 
-}
 
 .faceContent {
   height: 100%;
@@ -128,6 +118,19 @@ footer {
 }
 #refList > li{
   margin-bottom: 1em;
+}
+
+.face {
+  overflow-y: auto;
+  font-size: 1.1em;
+  box-sizing: border-box;
+  border: 2px solid rgba(187, 187, 187, 0.43);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  color: #16161d;
+  background-color: #F8F8F8; 
 }
 
 .face a {
