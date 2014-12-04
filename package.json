@@ -1,6 +1,6 @@
 {
-  "name": "LinkedIn",
-  "version": "1.0.0",
+  "name": "ng-cube",
+  "version": "1.0.1",
   "description": "",
   "main": "server.js",
 	"engines" : { 
