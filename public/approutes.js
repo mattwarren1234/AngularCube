@@ -10,7 +10,7 @@ angular.module('routes', ['ui.router'])
     //   .when('/t2', function(){console.log('callback in url router provider');})
     //   .otherwise('fakeness');
 
-    $urlRouterProvider.otherwise('/main');
+    $urlRouterProvider.otherwise('/about');
     $stateProvider.state('main', {
       url : '/main',
       templateUrl : '/components/main.html',
