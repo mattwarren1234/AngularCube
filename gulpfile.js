@@ -3,7 +3,7 @@
 
 var gulp = require('gulp'),
   argv = require('yargs').argv,
-  // sass = require('gulp-sass'),
+  sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   // minifycss = require('gulp-minify-css'),
   jshint = require('gulp-jshint'),
@@ -31,12 +31,12 @@ var source = {
   };
 
 // reload on html changes
-// gulp.task('html', function () {
-//   return gulp.src(source.html)
-//     .pipe(cache('html'))
-//     .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
-//     .pipe(remember('html'));
-// });
+gulp.task('html', function () {
+  return gulp.src(source.html)
+    .pipe(cache('html'))
+    .pipe(gulpif(!argv.production, browserSync.reload({stream:true})))
+    .pipe(remember('html'));
+});
 
 gulp.task('scripts', function() {
   return gulp.src(source.scripts) 
@@ -55,7 +55,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   return gulp.src(source.css)
     .pipe(cache('styles'))
-    // .pipe(sass({ style: 'expanded', }))
+    .pipe(sass({ style: 'expanded', }))
     .pipe(autoprefixer({
         browsers: ['last 4 versions'],
     }))
@@ -82,12 +82,12 @@ gulp.task('clean', function(cb) {
 gulp.task('watch', function() {
   if (argv.production) return;
   gulp.watch(source.css, ['styles']);
-  //gulp.watch(source.html, ['html']);
+  gulp.watch(source.html, ['html']);
   gulp.watch(source.scripts, ['scripts']);
 });
 
 gulp.task('default', [
-//  'html',
+ 'html',
   'styles',
   'scripts',
   'browser-sync',
