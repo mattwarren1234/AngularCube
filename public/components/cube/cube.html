@@ -1,12 +1,13 @@
-<div id="experiment"> 
-  <div class='container'>
-  <h1 id="disclaimer">This browser does not support css3 transforms. Please update to a newer browser to see. 
-  </h1>
-  <div id="cube" ng-class="selectedFace">
-    <!-- faces will be included here -->
-    <ng-transclude ></ng-transclude>
-    <!-- Generate cube faces where they haven't been defined by the user. -->
-    <cube-face face="{{defaultFace}}" is-default="true" ng-repeat="defaultFace in defaultFaces">
-    </cube-face>
+<!-- <div class='container'> -->
+  <div id="experiment"> 
+    <h1 id="disclaimer">This browser does not support css3 transforms. Please update to a newer browser to see. 
+    </h1>
+    <div id="cube" ng-class="selectedFace">
+      <!-- faces will be included here -->
+      <ng-transclude ></ng-transclude>
+      <!-- Generate cube faces where they haven't been defined by the user. -->
+      <cube-face face="{{defaultFace}}" is-default="true" ng-repeat="defaultFace in defaultFaces">
+      </cube-face>
+    </div>
   </div>
-</div>
+<!-- </div> -->

@@ -121,6 +121,7 @@ footer {
 }
 
 .face {
+  outline: 1px solid transparent;
   overflow-y: auto;
   font-size: 1.1em;
   box-sizing: border-box;
